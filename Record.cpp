@@ -34,10 +34,10 @@ namespace Inventory {
 
 	void Record::display() const
 	{
-		cout << "Record: " << getName() << ", " << getCountryOfOrigin() << endl;
+		cout << getName() << ", " << getCountryOfOrigin() << endl;
 		cout << "-------------------------" << endl;
 		cout << (isAddedToInventory() ? "In Inventory" : "Not in Inventory") << endl;
-		cout << "Inventory Record Number: " << getInventoryRecordNumber() << endl;
+		cout << "Inventory Record Number: " << getRecordNumber() << endl;
 		cout << "Current Number Of Item: " << getNumberOfItem() << endl;
 		cout << endl;
 	}
@@ -63,14 +63,14 @@ namespace Inventory {
 		return mCountryOfOrigin;
 	}
 
-	void Record::setInventoryRecordNumber(int inventoryRecordNumber)
+	void Record::setRecordNumber(int recordNumber)
 	{
-		mInventoryRecordNumber = inventoryRecordNumber;
+		mRecordNumber = recordNumber;
 	}
 
-	int Record::getInventoryRecordNumber() const
+	int Record::getRecordNumber() const
 	{
-		return mInventoryRecordNumber;
+		return mRecordNumber;
 	}
 
 	void Record::setNumberOfItem(int newNumberOfItem)

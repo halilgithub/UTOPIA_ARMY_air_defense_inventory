@@ -11,7 +11,7 @@ int main()
 	Record record;
 	record.setName("Stinger");
 	record.setCountryOfOrigin("USA");
-	record.setInventoryRecordNumber(1);
+	record.setRecordNumber(1);
 	//record.setNumberOfItem(3);
 	record.addToInventory();
 	record.display();

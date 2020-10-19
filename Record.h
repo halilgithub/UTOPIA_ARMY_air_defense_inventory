@@ -3,7 +3,7 @@
 #include <string>
 
 namespace Inventory {
-	const int DEFAULT_NUMBER_OF_ITEM = 1;
+	const int kDefaultNumberOfItem = 1;
 
 	class Record
 	{
@@ -23,8 +23,8 @@ namespace Inventory {
 		void setCountryOfOrigin(const std::string& countryOfOrigin);
 		const std::string& getCountryOfOrigin() const;
 
-		void setInventoryRecordNumber(int inventoryRecordNumber);
-		int getInventoryRecordNumber() const;
+		void setRecordNumber(int recordNumber);
+		int getRecordNumber() const;
 
 		void setNumberOfItem(int newNumberOfItem);
 		int getNumberOfItem() const;
@@ -34,8 +34,8 @@ namespace Inventory {
 	private:
 		std::string mName;
 		std::string mCountryOfOrigin;
-		int mInventoryRecordNumber = -1;
-		int mCurrentNumberOfItem = DEFAULT_NUMBER_OF_ITEM;
+		int mRecordNumber = -1;
+		int mCurrentNumberOfItem = kDefaultNumberOfItem;
 		bool mAddedToInventory = false;
 	};
 }
