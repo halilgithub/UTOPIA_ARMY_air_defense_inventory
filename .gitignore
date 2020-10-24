@@ -7,4 +7,4 @@
 *.o
 *.so
 docs/
-!myprogram.exe
+!binary_for_windows.exe
