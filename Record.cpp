@@ -27,9 +27,9 @@ namespace Inventory {
 		mAddedToInventory = true;
 	}
 	
-	void Record::addFeature(const string& feature)
+	void Record::addSpecification(const string& specification)
 	{
-		mFeatures.push_back(std::string(feature));
+		mSpecifications.push_back(std::string(specification));
 	}
 
 	void Record::removeFromInventory()
@@ -45,9 +45,9 @@ namespace Inventory {
 		cout << "Status: " << (isAddedToInventory() ? "In Inventory" : "Not in Inventory") << endl;
 		cout << "Inventory Record Number: " << getRecordNumber() << endl;
 		cout << "Current Number Of Item: " << getNumberOfItem() << endl;
-		cout << "Features: " << endl;
-		for (const string& feature : mFeatures) {
-			cout << "\t" << feature << endl;
+		cout << "Specifications: " << endl;
+		for (const string& specification : mSpecifications) {
+			cout << "\t" << specification << endl;
 		}
 		cout << endl;
 	}

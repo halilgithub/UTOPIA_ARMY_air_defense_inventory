@@ -22,12 +22,12 @@ int main()
 	Record& rec4 = myDB.addRecord("FIM-92 Stinger", "USA");
 	rec4.setNumberOfItem(24);
 	rec4.setType("Man-portable surface-to-air missile");
-	rec4.addFeature("Crew: 1-2");
-	rec4.addFeature("Mass: 15.19 kg");
-	rec4.addFeature("Engine: Solid-fuel rocket motor");
-	rec4.addFeature("Guidance System: Infrared Homing");
-	rec4.addFeature("Warhead: High Explosive annular blast fragmentation");
-	rec4.addFeature("Warhead Weight: 3 kg");
+	rec4.addSpecification("Crew: 1-2");
+	rec4.addSpecification("Mass: 15.19 kg");
+	rec4.addSpecification("Engine: Solid-fuel rocket motor");
+	rec4.addSpecification("Guidance System: Infrared Homing");
+	rec4.addSpecification("Warhead: High Explosive annular blast fragmentation");
+	rec4.addSpecification("Warhead Weight: 3 kg");
     
 	cout << "all records: " << endl << endl;
     myDB.displayAllRecords();

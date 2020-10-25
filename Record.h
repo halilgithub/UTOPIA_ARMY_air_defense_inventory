@@ -15,7 +15,7 @@ namespace Inventory {
 		void increaseNumberOfItem(int increaseAmount = 1);
 		void decreaseNumberOfItem(int decreaseAmount = 1);
 		void addToInventory();
-		void addFeature(const std::string& feature);
+		void addSpecification(const std::string& feature);
 		void removeFromInventory();
 		void display() const;// outputs Record info
 
@@ -39,7 +39,7 @@ namespace Inventory {
 	private:
 		std::string mName;
 		std::string mCountryOfOrigin;
-		std::vector<std::string> mFeatures;
+		std::vector<std::string> mSpecifications;
 		std::string mType;
 		int mRecordNumber = -1;
 		int mCurrentNumberOfItem = kDefaultNumberOfItem;
