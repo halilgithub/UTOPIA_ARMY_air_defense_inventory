@@ -26,6 +26,11 @@ namespace Inventory {
 	{
 		mAddedToInventory = true;
 	}
+	
+	void Record::addFeature(const string& feature)
+	{
+		mFeatures.push_back(std::string(feature));
+	}
 
 	void Record::removeFromInventory()
 	{
@@ -36,9 +41,14 @@ namespace Inventory {
 	{
 		cout << getName() << ", " << getCountryOfOrigin() << endl;
 		cout << "-------------------------" << endl;
-		cout << (isAddedToInventory() ? "In Inventory" : "Not in Inventory") << endl;
+		cout << "Type: " << getType() << endl;
+		cout << "Status: " << (isAddedToInventory() ? "In Inventory" : "Not in Inventory") << endl;
 		cout << "Inventory Record Number: " << getRecordNumber() << endl;
 		cout << "Current Number Of Item: " << getNumberOfItem() << endl;
+		cout << "Features: " << endl;
+		for (const string& feature : mFeatures) {
+			cout << "\t" << feature << endl;
+		}
 		cout << endl;
 	}
 
@@ -62,7 +72,17 @@ namespace Inventory {
 	{
 		return mCountryOfOrigin;
 	}
+	
+	void Record::setType(const string& type)
+	{
+		mType = type;
+	}
 
+	const string& Record::getType() const
+	{
+		return mType;
+	}
+	
 	void Record::setRecordNumber(int recordNumber)
 	{
 		mRecordNumber = recordNumber;

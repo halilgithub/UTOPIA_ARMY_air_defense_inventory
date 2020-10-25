@@ -1,6 +1,7 @@
 #pragma once  // This prevents the file from being included multiple times
 
 #include <string>
+#include <vector>
 
 namespace Inventory {
 	const int kDefaultNumberOfItem = 1;
@@ -14,6 +15,7 @@ namespace Inventory {
 		void increaseNumberOfItem(int increaseAmount = 1);
 		void decreaseNumberOfItem(int decreaseAmount = 1);
 		void addToInventory();
+		void addFeature(const std::string& feature);
 		void removeFromInventory();
 		void display() const;// outputs Record info
 
@@ -23,6 +25,9 @@ namespace Inventory {
 		void setCountryOfOrigin(const std::string& countryOfOrigin);
 		const std::string& getCountryOfOrigin() const;
 
+		void setType(const std::string& type);
+		const std::string& getType() const;
+		
 		void setRecordNumber(int recordNumber);
 		int getRecordNumber() const;
 
@@ -34,6 +39,8 @@ namespace Inventory {
 	private:
 		std::string mName;
 		std::string mCountryOfOrigin;
+		std::vector<std::string> mFeatures;
+		std::string mType;
 		int mRecordNumber = -1;
 		int mCurrentNumberOfItem = kDefaultNumberOfItem;
 		bool mAddedToInventory = false;
