@@ -7,4 +7,5 @@
 *.o
 *.so
 docs/
+test/
 !binary_for_windows.exe
