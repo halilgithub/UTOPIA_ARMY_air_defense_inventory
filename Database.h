@@ -10,18 +10,18 @@ namespace Inventory {
 	class Database
 	{
 	public:
-		Record& addRecord(const std::string& name,
-							  const std::string& countryOfOrigin);
+		Record& addRecord(const string& name,
+							  const string& countryOfOrigin);
 		Record& getRecord(int recordNumber);
-		Record& getRecord(const std::string& name,
-							  const std::string& countryOfOrigin);
+		Record& getRecord(const string& name,
+							  const string& countryOfOrigin);
 
 		void displayAllRecords() const;
 		void displayCurrentRecords() const;
 		void displayFormerRecords() const;
 
 	private:
-		std::vector<Record> mRecords;
+		vector<Record> mRecords;
 		int mNextRecordNumber = kFirstRecordNumber;
 	};
 }

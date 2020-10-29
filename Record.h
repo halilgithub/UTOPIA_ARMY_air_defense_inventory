@@ -3,6 +3,8 @@
 #include <string>
 #include <vector>
 
+using namespace std;
+
 namespace Inventory {
 	const int kDefaultNumberOfItem = 1;
 
@@ -10,23 +12,23 @@ namespace Inventory {
 	{
 	public:
 		Record() = default;
-		Record(const std::string& name, const std::string& countryOfOrigin);
+		Record(const string& name, const string& countryOfOrigin);
 
 		void increaseNumberOfItem(int increaseAmount = 1);
 		void decreaseNumberOfItem(int decreaseAmount = 1);
 		void addToInventory();
-		void addSpecification(const std::string& feature);
+		void addSpecification(const string& feature);
 		void removeFromInventory();
 		void display() const;// outputs Record info
 
-		void setName(const std::string& name);
-		const std::string& getName() const;
+		void setName(const string& name);
+		const string& getName() const;
 
-		void setCountryOfOrigin(const std::string& countryOfOrigin);
-		const std::string& getCountryOfOrigin() const;
+		void setCountryOfOrigin(const string& countryOfOrigin);
+		const string& getCountryOfOrigin() const;
 
-		void setType(const std::string& type);
-		const std::string& getType() const;
+		void setType(const string& type);
+		const string& getType() const;
 		
 		void setRecordNumber(int recordNumber);
 		int getRecordNumber() const;
@@ -37,10 +39,10 @@ namespace Inventory {
 		bool isAddedToInventory() const;
 
 	private:
-		std::string mName;
-		std::string mCountryOfOrigin;
-		std::vector<std::string> mSpecifications;
-		std::string mType;
+		string mName;
+		string mCountryOfOrigin;
+		vector<string> mSpecifications;
+		string mType;
 		int mRecordNumber = -1;
 		int mCurrentNumberOfItem = kDefaultNumberOfItem;
 		bool mAddedToInventory = false;

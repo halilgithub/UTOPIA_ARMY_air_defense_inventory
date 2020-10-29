@@ -5,7 +5,7 @@ using namespace std;
 
 namespace Inventory {
 
-	Record::Record(const std::string& name, const std::string& countryOfOrigin)
+	Record::Record(const string& name, const string& countryOfOrigin)
 		: mName(name)
 		, mCountryOfOrigin(countryOfOrigin)
 	{
@@ -29,7 +29,7 @@ namespace Inventory {
 	
 	void Record::addSpecification(const string& specification)
 	{
-		mSpecifications.push_back(std::string(specification));
+		mSpecifications.push_back(string(specification));
 	}
 
 	void Record::removeFromInventory()
