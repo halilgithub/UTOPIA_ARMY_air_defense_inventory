@@ -1,8 +1,10 @@
 #include <iostream>
 #include <stdexcept>
 #include "Database.h"
+#include "Record.h"
 
 using namespace std;
+
 
 namespace Inventory {
 
@@ -12,52 +14,54 @@ namespace Inventory {
 		Record theRecord(name, countryOfOrigin);
 		theRecord.setRecordNumber(mNextRecordNumber++);
 		theRecord.addToInventory();
-		mRecords.push_back(theRecord);
+		mMap.insert(make_pair(theRecord.getRecordNumber(),theRecord));
 
-		return mRecords[mRecords.size() - 1];
+		return mMap.at(theRecord.getRecordNumber());
 	}
 
 	Record& Database::getRecord(int recordNumber)
 	{
-		for (auto& record : mRecords) {
-			if (record.getRecordNumber() == recordNumber) {
-				return record;
-			}
-		}
+		return mMap.at(recordNumber);
 		throw logic_error("No record found.");
 	}
 
 	Record& Database::getRecord(const string& name, const string& countryOfOrigin)
 	{
-		for (auto& record : mRecords) {
-			if (record.getName() == name &&
-				record.getCountryOfOrigin() == countryOfOrigin) {
-					return record;
-			}
+		unordered_map<int,Record>::iterator p;
+		for(p=mMap.begin(); p!=mMap.end(); p++)
+		{
+			if(p->second.getName() == name && p->second.getCountryOfOrigin() == countryOfOrigin)
+				return mMap.at(p->first);
 		}
 		throw logic_error("No record found.");
 	}
 
-	void Database::displayAllRecords() const
+	void Database::displayAllRecords()
 	{
-		for (const auto& record : mRecords) {
-			record.display();
+		unordered_map<int,Record>::iterator itr;
+		for(itr = mMap.begin(); itr != mMap.end(); itr++)
+		{
+			itr->second.display();
 		}
 	}
 
-	void Database::displayCurrentRecords() const
+	void Database::displayCurrentRecords()
 	{
-		for (const auto& record : mRecords) {
-			if (record.isAddedToInventory())
-				record.display();
+		unordered_map<int,Record>::iterator itr;
+		for(itr = mMap.begin(); itr != mMap.end(); itr++)
+		{	
+			if(itr->second.isAddedToInventory())
+				itr->second.display();
 		}
 	}
 
-	void Database::displayFormerRecords() const
+	void Database::displayFormerRecords()
 	{
-		for (const auto& record : mRecords) {
-			if (!record.isAddedToInventory())
-				record.display();
+		unordered_map<int,Record>::iterator itr;
+		for(itr = mMap.begin(); itr != mMap.end(); itr++)
+		{	
+			if(!itr->second.isAddedToInventory())
+				itr->second.display();
 		}
 	}
 
