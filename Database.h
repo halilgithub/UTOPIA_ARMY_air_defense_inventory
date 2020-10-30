@@ -1,8 +1,11 @@
 #pragma once
 
 #include <iostream>
-#include <vector>
+#include <unordered_map>
 #include "Record.h"
+
+using namespace std;
+
 
 namespace Inventory {
 	const int kFirstRecordNumber = 1000;
@@ -16,12 +19,12 @@ namespace Inventory {
 		Record& getRecord(const string& name,
 							  const string& countryOfOrigin);
 
-		void displayAllRecords() const;
-		void displayCurrentRecords() const;
-		void displayFormerRecords() const;
+		void displayAllRecords();
+		void displayCurrentRecords();
+		void displayFormerRecords();
 
 	private:
-		vector<Record> mRecords;
+		unordered_map<int,Record> mMap;
 		int mNextRecordNumber = kFirstRecordNumber;
 	};
 }
