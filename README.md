@@ -3,7 +3,7 @@ I am developing an Air Defense Inventory System for the Army of UTOPIA (an imagi
 
 ## introduction and status
 It is an ongoing Project yet. It will track the whole Air Defense Inventory of utopia army(weapons, radars and other systems).
-I haven't decided yet whether I will use a database or any other structure (e.g. std::vector). I will first implement it
+I haven't decided yet whether I will use a database or any other structure. I will first implement it
 as a console application and may finalize it with a Qt User Interface.
 My main porpose is to develop a clean professional application following Object-Oriented Design&Develop principles, common C++ standards and convensions.
 
