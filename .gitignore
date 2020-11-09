@@ -8,4 +8,5 @@
 *.so
 docs/
 test/
+.vscode/
 !binary_for_windows.exe
